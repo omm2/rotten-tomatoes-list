@@ -1,15 +1,5 @@
 <div class="hero-unit">
   <h1>'Allo, 'Allo!</h1>
-  <p>You now have</p>
-  <ul>
-      <li ng-repeat="thing in awesomeThings">{{thing}}</li>
-  </ul>
-  <p>installed.</p>
-  <h3>Enjoy coding! - Yeoman</h3>
-  <select ui-select2 ng-model="select2" data-placeholder="Pick a number">
-      <option value=""></option>
-      <option value="one">First</option>
-      <option value="two">Second</option>
-      <option value="three">Third</option>
-  </select>
+  <h3>Please Pick a movie</h3>
+  <input type="hidden" ui-select2="select2Options" ng-model="select2">
 </div>
