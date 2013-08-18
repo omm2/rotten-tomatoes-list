@@ -12,7 +12,7 @@ angular.module('rottenListApp')
             data: (term, page)->
               q: term, #search term
               page_limit: 10,
-              apikey: "ju6z9mjyajq2djue3gbvv26t" #please do not use so this example keeps working
+              apikey: "gbngrekn754krwuqf7ajaumr" #please do not use so this example keeps working
             results: (data, page)-> #parse the results into the format expected by Select2.
               #since we are using custom formatting functions we do not need to alter remote JSON data
               results: data.movies
@@ -24,11 +24,15 @@ angular.module('rottenListApp')
           if (id isnt "")
               $.ajax("http://api.rottentomatoes.com/api/public/v1.0/movies/"+id+".json", {
                   data:
-                    apikey: "ju6z9mjyajq2djue3gbvv26t"
+                    apikey: "gbngrekn754krwuqf7ajaumr"
                   dataType: "jsonp"
               }).done((data)-> callback(data))
-        formatResult: (m)-> m.title #omitted for brevity, see the source of this page
+        formatResult: (m)-> 
+          m.title #omitted for brevity, see the source of this page
         formatSelection: (m)-> m.title  #omitted for brevity, see the source of this page
         dropdownCssClass: "bigdrop", #apply css that makes the dropdown taller
         escapeMarkup: (m)-> m #we do not want to escape markup since we are displaying html in results
+
+    $scope.change = (e)->
+      $scope.movieOne = $scope.select2
   )

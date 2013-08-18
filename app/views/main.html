@@ -1,5 +1,8 @@
 <div class="hero-unit">
   <h1>'Allo, 'Allo!</h1>
   <h3>Please Pick a movie</h3>
-  <input type="hidden" ui-select2="select2Options" ng-model="select2">
+  <input type="hidden" ui-select2="select2Options" ng-model="select2" ng-change="change()" >
+  <div data-movie="position-one"><img src={{movieOne.posters.detailed}}></div>
+  <div data-movie="position-two"><img src={{movieTwo.posters.detailed}}></div>
+  <div data-movie="position-three"><img src={{movieThree.posters.detailed}}></div>
 </div>
