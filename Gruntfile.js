@@ -33,6 +33,10 @@ module.exports = function (grunt) {
         files: ['<%= yeoman.app %>/scripts/{,*/}*.coffee'],
         tasks: ['coffee:dist']
       },
+      less: {
+        files: ['<%= yeoman.app %>/styles/{,*/}*.less'],
+        tasks: ['less:dist']
+      },
       coffeeTest: {
         files: ['test/spec/{,*/}*.coffee'],
         tasks: ['coffee:test']
@@ -130,6 +134,17 @@ module.exports = function (grunt) {
           src: '{,*/}*.coffee',
           dest: '.tmp/spec',
           ext: '.js'
+        }]
+      }
+    },
+    less: {
+      dist: {
+        files: [{
+          expand: true,
+          cwd: '<%= yeoman.app %>/styles',
+          src: '{,*/}*.less',
+          dest: '<%= yeoman.app %>/styles',
+          ext: '.css'
         }]
       }
     },
@@ -244,7 +259,8 @@ module.exports = function (grunt) {
     },
     concurrent: {
       server: [
-        'coffee:dist'
+        'coffee:dist',
+        'less:dist'
       ],
       test: [
         'coffee'
