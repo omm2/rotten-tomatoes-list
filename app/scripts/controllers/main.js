@@ -4,6 +4,7 @@ angular.module('rottenListApp').controller('MainCtrl', function($scope) {
   $scope.select2Options = {
     placeholder: "Search for a movie",
     minimumInputLength: 1,
+    dropdownCssClass: "header-drop",
     ajax: {
       url: "http://api.rottentomatoes.com/api/public/v1.0/movies.json",
       dataType: 'jsonp',
@@ -40,7 +41,6 @@ angular.module('rottenListApp').controller('MainCtrl', function($scope) {
     formatSelection: function(m) {
       return m.title;
     },
-    dropdownCssClass: "bigdrop",
     escapeMarkup: function(m) {
       return m;
     }

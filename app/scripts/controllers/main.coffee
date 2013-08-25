@@ -6,6 +6,7 @@ angular.module('rottenListApp')
     $scope.select2Options =
         placeholder: "Search for a movie"
         minimumInputLength: 1
+        dropdownCssClass: "header-drop"
         ajax:
             url: "http://api.rottentomatoes.com/api/public/v1.0/movies.json"
             dataType: 'jsonp',
@@ -30,7 +31,6 @@ angular.module('rottenListApp')
         formatResult: (m)-> 
           m.title #omitted for brevity, see the source of this page
         formatSelection: (m)-> m.title  #omitted for brevity, see the source of this page
-        dropdownCssClass: "bigdrop", #apply css that makes the dropdown taller
         escapeMarkup: (m)-> m #we do not want to escape markup since we are displaying html in results
 
     $scope.change = (e)->

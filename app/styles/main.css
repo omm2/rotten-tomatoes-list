@@ -1,22 +1,81 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
 body {
-    background: #fafafa;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    color: #333;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #aaaaaa;
+  margin: 0;
+  padding: 0;
 }
-
-.hero-unit {
-    margin: 50px auto 0 auto;
-    width: 300px;
-    font-size: 18px;
-    font-weight: 200;
-    line-height: 30px;
-    background-color: #eee;
-    border-radius: 6px;
-    padding: 60px;
+header .select2-container {
+  width: 50%;
+  margin: auto;
+  display: block;
+  padding: 10px 0;
 }
-
-.hero-unit h1 {
-    font-size: 60px;
-    line-height: 1;
-    letter-spacing: -1px;
+header .select2-default {
+  color: rgba(0, 0, 0, 0.3) !important;
+}
+header .select2-container .select2-choice {
+  height: 3em;
+  border-radius: 0px;
+  background-image: none;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  font-style: italic;
+  font-size: 1em;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  color: rgba(0, 0, 0, 0.3);
+}
+header .select2-container .select2-choice > .select2-chosen {
+  padding: 0.5em 3em;
+}
+header .select2-container .select2-choice .select2-arrow {
+  display: none;
+}
+header .select2-dropdown-open .select2-choice {
+  background-color: #ffffff;
+}
+.header-drop.select2-drop {
+  margin-top: -58px;
+  color: rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-radius: 0px;
+}
+.header-drop.select2-drop-active {
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+.header-drop .select2-search input {
+  min-height: 3em;
+  padding: 4px 20px 4px 5px;
+  margin: 10px 0;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  background: #ffffff;
+}
+.header-drop .select2-results .select2-no-results,
+.header-drop .select2-results .select2-searching,
+.header-drop .select2-results .select2-selection-limit {
+  background: #ffffff;
+}
+.clear-left {
+  clear: left;
+}
+ul.list {
+  list-style-type: none;
+}
+@media screen and (min-width: 600px) {
+  li.item {
+    display: inline-block;
+    vertical-align: top;
+    width: 25%;
+    height: 25%;
+    border: 1px solid;
+    margin: 1em;
+  }
+}
+@media screen and (max-width: 599px) {
+  
 }
