@@ -16,18 +16,17 @@ header .select2-container {
   padding: 10px 0;
 }
 header .select2-default {
-  color: rgba(0, 0, 0, 0.3) !important;
+  color: #00cc99 !important;
 }
 header .select2-container .select2-choice {
   height: 3em;
   border-radius: 0px;
   background-image: none;
   border: 1px solid rgba(0, 0, 0, 0.3);
-  font-style: italic;
   font-size: 1em;
   -webkit-box-shadow: none;
   box-shadow: none;
-  color: rgba(0, 0, 0, 0.3);
+  color: #00cc99;
 }
 header .select2-container .select2-choice > .select2-chosen {
   padding: 0.5em 3em;
