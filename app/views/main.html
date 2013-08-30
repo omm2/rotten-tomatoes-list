@@ -3,23 +3,8 @@
     <input type="hidden" class="movie-drop" ui-select2="select2Options" ng-model="select2" ng-change="change()" >
   </header>
   <ul class="list">
-    <li data-movie="position-one" class="item">
-      <img src={{movieOne.posters.detailed}}>
-    </li>
-    <li data-movie="position-one" class="item">
-      <img src={{movieOne.posters.detailed}}>
-    </li>
-    <li data-movie="position-one" class="item">
-      <img src={{movieOne.posters.detailed}}>
-    </li>
-    <li data-movie="position-one" class="item">
-      <img src={{movieOne.posters.detailed}}>
-    </li>
-    <li data-movie="position-one" class="item">
-      <img src={{movieOne.posters.detailed}}>
-    </li>
-    <li data-movie="position-one" class="item">
-      <img src={{movieOne.posters.detailed}}>
+    <li data-movie="position-one" ng-repeat="movie in movies" class="item">
+      <img src={{movie.posters.detailed}}>
     </li>
   </ul>
 </div>
