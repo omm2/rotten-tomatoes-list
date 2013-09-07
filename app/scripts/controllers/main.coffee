@@ -15,19 +15,34 @@ angular.module('rottenListApp')
         $location
       $location
   ])
-  .controller('MainCtrl', ($scope, $location, location)->
+  .controller('MainCtrl', ($scope, $location, $http, location)->
     $scope.separator = ","
     $scope.apikey = "gbngrekn754krwuqf7ajaumr"
     $scope.movies = []
-    if $location.search().movies
-      ids = $scope.getUrlIds $location.search().movies
-      $.ajax("http://api.rottentomatoes.com/api/public/v1.0/movies/"+id+".json", {
-          data:
-            apikey: "gbngrekn754krwuqf7ajaumr"
-          dataType: "jsonp"
-      }).done((data)-> callback(data))
 
-    console.log $location.search()
+    $scope.getUrlIds = (idsStr)->
+      ids = []
+      splits = idsStr.split $scope.separator
+      _.each splits, (id)->
+        ids.push parseInt(id)
+      ids
+
+    $scope.updateList = ()->
+      if $location.search().movies
+        xhrs = []
+        ids = $scope.getUrlIds $location.search().movies
+        _.each ids, (id)->
+          console.log id
+          $http.jsonp("http://api.rottentomatoes.com/api/public/v1.0/movies/"+id+".json?apikey="+$scope.apikey,
+            params:
+              "callback": "JSON_CALLBACK"
+            )
+            .success((data, status, headers, config) ->
+              $scope.movies.push data
+            )
+
+    $scope.updateList()
+
     $scope.select2Options =
         placeholder: "Search for a movie"
         minimumInputLength: 1
@@ -77,11 +92,5 @@ angular.module('rottenListApp')
       #$location.skipReload().path('/thing/' + id).replace();
       console.log $scope.movies
 
-    $scope.getUrlIds = (idsStr)->
-      ids = []
-      splits = idsStr.split $scope.separator
-      _.each splits, (id)->
-        ids.push parseInt(id)
-      ids
 
   )
