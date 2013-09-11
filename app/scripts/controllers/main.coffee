@@ -80,6 +80,7 @@ angular.module('rottenListApp')
 
     $scope.change = (e)->
       movie = $scope.select2
+      console.log movie
       if $location.search().movies
         ids = $scope.getUrlIds $location.search().movies
         if _.indexOf(ids, parseInt movie.id) is -1

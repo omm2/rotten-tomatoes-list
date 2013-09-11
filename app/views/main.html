@@ -4,7 +4,9 @@
   </header>
   <ul class="list">
     <li data-movie="position-one" ng-repeat="movie in movies" class="item">
-      <img src={{movie.posters.detailed}}>
+      <div class="img-cont">
+        <img src={{movie.posters.original}}>
+      </div>
     </li>
   </ul>
 </div>
