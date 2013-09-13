@@ -44,7 +44,7 @@ angular.module('rottenListApp')
     $scope.updateList()
 
     $scope.select2Options =
-        placeholder: "Search for a movie"
+        placeholder: "PRESS ME"
         minimumInputLength: 1
         dropdownCssClass: "header-drop"
         ajax:

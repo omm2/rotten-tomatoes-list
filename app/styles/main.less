@@ -1,8 +1,8 @@
 @backgroundMain: #FFF;
 @colorBody: #AAA;
 @backgroundBody: #FAFA00;
-@colorHeader: #1BF2E7;
-@colorSearch: #1BF2E7;
+@colorHeader: #F0E9EB;
+@colorSearch: #F0E9EB;
 @backgroundLi2n: #E3E8E8;
 @backgroundLi: #1B1BE0;
 * {
@@ -12,7 +12,7 @@
 }
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  background-color: @backgroundBody;
+  //background-color: @backgroundBody;
   color: @colorBody;
   margin: 0;
 }
@@ -79,7 +79,7 @@ header{
 }
 ul.list {
   background-color: @backgroundMain;
-  margin:0 30px;
+  margin:1em;
   li:nth-child(2n) {
       //background: @backgroundLi2n;
   }
@@ -88,7 +88,9 @@ ul.list {
   }
   li {
     div.img-cont{
-      padding:1em;
+      width: 300px;
+      height: 300px;
+      overflow: hidden;
       img{
         max-height:400px;
         max-width:300px;
@@ -105,7 +107,7 @@ ul.list {
     vertical-align: top;
     line-height: 100px;
     width: 25%;
-    height:325px;
+    //height:325px;
   }
 }
 @media screen and (max-width:599px) {
