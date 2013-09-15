@@ -90,5 +90,4 @@ angular.module('rottenListApp')
         idsStr = "#{movie.id}"
       $scope.movies.push movie
       location.skipReload().search(movies: idsStr)
-
   )

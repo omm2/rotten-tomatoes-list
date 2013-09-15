@@ -6,6 +6,7 @@
     "express": "~3.4.0",
     "bower": "1.2.x"
   },
+  "dependencies": {},
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-contrib-copy": "~0.4.1",
@@ -37,6 +38,7 @@
   },
   "scripts": {
     "test": "grunt test",
-    "postinstall": "./node_modules/bower/bin/bower install"
+    "postinstall": "./node_modules/bower/bin/bower install",
+    "test": "grunt test"
   }
 }
